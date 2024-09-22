@@ -1,0 +1,64 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 255, 0.195);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .main_container {
+  width: 90vw;
+  height: 60vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .main_container .main_ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  gap: 30px;
+  list-style: none;
+}
+.main .main_container .main_ul li.main_li:nth-child(1) {
+  background-color: rgba(69, 198, 185, 0.5);
+  transition: background-color 1s ease;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}
+.main .main_container .main_ul li.main_li:nth-child(1):hover {
+  background-color: rgb(69, 198, 185);
+}
+.main .main_container .main_ul li.main_li:nth-child(2) {
+  background-color: rgba(4, 146, 26, 0.5);
+  transition: background-color 1s ease;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}
+.main .main_container .main_ul li.main_li:nth-child(2):hover {
+  background-color: rgb(4, 146, 26);
+}
+.main .main_container .main_ul li.main_li:nth-child(3) {
+  background-color: rgba(126, 17, 60, 0.5);
+  transition: background-color 1s ease;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}
+.main .main_container .main_ul li.main_li:nth-child(3):hover {
+  background-color: rgb(126, 17, 60);
+}
+.main .main_container .main_ul li.main_li:nth-child(4) {
+  background-color: rgba(185, 4, 172, 0.5);
+  transition: background-color 1s ease;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}
+.main .main_container .main_ul li.main_li:nth-child(4):hover {
+  background-color: rgb(185, 4, 172);
+}/*# sourceMappingURL=index.css.map */

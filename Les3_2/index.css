@@ -23,42 +23,42 @@
   list-style: none;
 }
 .main .main_container .main_ul li.main_li:nth-child(1) {
-  background-color: rgba(69, 198, 185, 0.5);
+  background-color: rgba(13, 156, 117, 0.5);
   transition: background-color 1s ease;
   width: 200px;
   height: 200px;
   cursor: pointer;
 }
 .main .main_container .main_ul li.main_li:nth-child(1):hover {
-  background-color: rgb(69, 198, 185);
+  background-color: rgb(13, 156, 117);
 }
 .main .main_container .main_ul li.main_li:nth-child(2) {
-  background-color: rgba(4, 146, 26, 0.5);
+  background-color: rgba(241, 55, 253, 0.5);
   transition: background-color 1s ease;
   width: 200px;
   height: 200px;
   cursor: pointer;
 }
 .main .main_container .main_ul li.main_li:nth-child(2):hover {
-  background-color: rgb(4, 146, 26);
+  background-color: rgb(241, 55, 253);
 }
 .main .main_container .main_ul li.main_li:nth-child(3) {
-  background-color: rgba(126, 17, 60, 0.5);
+  background-color: rgba(184, 49, 67, 0.5);
   transition: background-color 1s ease;
   width: 200px;
   height: 200px;
   cursor: pointer;
 }
 .main .main_container .main_ul li.main_li:nth-child(3):hover {
-  background-color: rgb(126, 17, 60);
+  background-color: rgb(184, 49, 67);
 }
 .main .main_container .main_ul li.main_li:nth-child(4) {
-  background-color: rgba(185, 4, 172, 0.5);
+  background-color: rgba(16, 16, 218, 0.5);
   transition: background-color 1s ease;
   width: 200px;
   height: 200px;
   cursor: pointer;
 }
 .main .main_container .main_ul li.main_li:nth-child(4):hover {
-  background-color: rgb(185, 4, 172);
+  background-color: rgb(16, 16, 218);
 }/*# sourceMappingURL=index.css.map */

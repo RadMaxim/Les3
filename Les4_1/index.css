@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: auto 90% auto;
+  grid-template-rows: 15vh 70vh 15vh;
+  grid-template-areas: "header header header" ". main ." "footer footer footer";
+}
+body > * {
+  border: 0.1px solid black;
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
+#switch {
+  display: none;
+}
+
+#switch:checked ~ main {
+  background-color: red;
+}
+
+label[for=switch] {
+  transition: transform 0.5s ease;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: blue;
+}
+
+#switch:checked ~ label {
+  transform: translateX(100%);
+}
+
+.notification {
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  transition: 1s;
+}/*# sourceMappingURL=index.css.map */

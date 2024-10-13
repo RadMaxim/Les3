@@ -1,0 +1,18 @@
+@mixin loader(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    position: relative;
+}
+#loader{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include loader();
+
+
+}

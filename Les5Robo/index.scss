@@ -1,0 +1,24 @@
+:root{
+    --color-yellow: rgb(241, 252, 28);
+    --color-black:black;
+}
+
+ul{
+    list-style-type: none;
+    li{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgb(241, 252, 28);
+        margin-top: 30px;
+    }
+}
+
+
+
+ul{
+    
+    min-height: 60vh;
+    width: 100%;
+    border: 1px solid var(--color-yellow);
+}

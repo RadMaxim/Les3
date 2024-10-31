@@ -1,31 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do list</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
     <header>
-
+      <h1>Todo-list</h1>
+      <div class="addedTasks" >Tasks: 0</div>
+      <section>
+        <input
+          type="text"
+          id="task_text"
+          placeholder="Please, enter any task here"
+        />
+        <button id="add">Add task</button>
+      </section>
     </header>
     <main>
-        <section>
-            <input type="button" value="add" id="add">
-            <input type="text" placeholder="task" id="task">
-            <ul id="todoList">
-                
-            </ul>
-        </section>
+   
+      <ul id="tasks">
+        <li class="task_li">
+          <p class="numberTask">1</p>
+          <p class="task">I need to go to the cinema</p>
+          <input type="checkbox" name="" id="input1" />
+          
+          <button>Delete</button>
+        </li>
+      </ul>
     </main>
-    <footer>
-
-    </footer>
-    <div id="loader">
-        Loading.....
-    </div>
-
-    <script src="./index.js"></script>
-</body>
+    <footer></footer>
+    <section id="loading">
+      <p>Loading...</p>
+    </section>
+    
+    <script defer  type="module" src="./index.js" ></script>
+  </body>
 </html>

@@ -2,6 +2,11 @@
   font-family: myStyle;
   src: url("./../fonts/PlaywriteGBS-Italic-VariableFont_wght.ttf");
 }
+@mixin posElem(){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 h1,h2,p{
   font-family:myStyle;
 }
@@ -38,9 +43,8 @@ input[type="checkbox"]:checked ~ .task::before {
   left: 0%;
 }
 header{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include posElem();
+
   flex-direction: column;
 }
 body{
@@ -83,9 +87,7 @@ button:hover::before{
   font-weight: 700;
 }
 #loading{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include posElem();
   position: absolute;
   top: 0;
   left: 0;
@@ -97,4 +99,22 @@ button:hover::before{
   font-weight: 700;
 
   }
+}
+main{
+  position: relative;
+}
+.isEmptyList{
+  // display: block;
+  background-color: rgba(255, 255, 255, 0.438);
+  @include posElem();
+  min-width: 300px;
+  position: absolute;
+  top: 20vh;
+  left: 50%;
+  transform: translateX(-50%)
+  
+}
+#tasks:has(.task_li) ~ .isEmptyList{
+  display: none;
+ 
 }

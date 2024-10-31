@@ -104,4 +104,24 @@ button:hover::before {
 #loading p {
   font-size: 48px;
   font-weight: 700;
+}
+
+main {
+  position: relative;
+}
+
+.isEmptyList {
+  background-color: rgba(255, 255, 255, 0.438);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+  position: absolute;
+  top: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#tasks:has(.task_li) ~ .isEmptyList {
+  display: none;
 }/*# sourceMappingURL=index.css.map */

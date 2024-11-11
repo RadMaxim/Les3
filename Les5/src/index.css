@@ -1,8 +1,10 @@
 @font-face {
   font-family: myStyle;
-  src: url("./../fonts/PlaywriteGBS-Italic-VariableFont_wght.ttf");
+  src: url("./../../fonts/DMSans-VariableFont_opsz\,wght.ttf");
 }
-h1, h2, p {
+h1,
+h2,
+p {
   font-family: myStyle;
 }
 
@@ -37,7 +39,7 @@ ul li {
   transition: left 0.5s ease-in-out;
 }
 
-input[type=checkbox]:checked ~ .task::before {
+input[type="checkbox"]:checked ~ .task::before {
   left: 0%;
 }
 
@@ -139,4 +141,4 @@ main {
 #mainTasks {
   width: 40%;
   min-height: 500px;
-}/*# sourceMappingURL=index.css.map */
+} /*# sourceMappingURL=index.css.map */

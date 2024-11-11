@@ -7,6 +7,18 @@
     "build:dev": "webpack --env  mode=development",
     "build:prod": "webpack --env  mode=production"
   },
+  "lint-staged": {
+    "./src/*.js": [
+      "npm run format",
+      "npm run lint",
+      "git add ."
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "babel-loader": "^9.2.1",
     "clean-webpack-plugin": "^4.0.0",

@@ -18,6 +18,11 @@ export default [
     },
   },
   {
-    ignores: ["node_modules/**", "dist/**", "webpack.config.js"],
+    ignores: [
+      "node_modules/**",
+      "dist_les5/**",
+      "webpack.config.js",
+      "eslint.config.mjs",
+    ],
   },
 ];

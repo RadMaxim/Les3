@@ -2,6 +2,7 @@ let arr = [];
 // для хранения всех элементов
 function updateArr(arrNew) {
   arr = arrNew;
+  console.log(arr);
 }
 // для обновления нашего массива
 function updateLenghtArr() {

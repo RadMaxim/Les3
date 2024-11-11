@@ -23,14 +23,14 @@ function deleteElem() {
       right.addEventListener("dragover", function (e) {
         e.preventDefault();
       });
-      right.addEventListener("drop", function (e) {
+      right.addEventListener("drop", function () {
         right.appendChild(selected);
         selected = null;
       });
       left.addEventListener("dragover", function (e) {
         e.preventDefault();
       });
-      left.addEventListener("drop", function (e) {
+      left.addEventListener("drop", function () {
         left.appendChild(selected);
         selected = null;
       });

@@ -5,7 +5,6 @@ import { updateArr, arr, updateLenghtArr } from "./data.js";
 
 window.addEventListener("load", () => {
   waited();
-  let addedTasks = document.querySelector(".addedTasks");
   let add = document.getElementById("add");
 
   add.addEventListener("click", () => {

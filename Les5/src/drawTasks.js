@@ -2,7 +2,6 @@ import { deleteElem } from "./delete.js";
 
 function drawElem(arr) {
   let tasks = document.getElementById("tasks");
-  let mainTasks = document.getElementById("mainTasks");
   let li = ``;
   for (let index = 0; index < arr.length; index++) {
     li += `<li draggable="true" class="task_li">

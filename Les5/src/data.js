@@ -1,7 +1,13 @@
+import { drawElem } from "./drawTasks.js";
+import saveTask from "./saveLocalStorage.js";
+
 let arr = [];
 
 function updateArr(arrNew) {
+  const { getTask, setTask } = saveTask();
   arr = arrNew;
+  setTask(arrNew);
+  drawElem(getTask());
 }
 
 function updateLenghtArr() {

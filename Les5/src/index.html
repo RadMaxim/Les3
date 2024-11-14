@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To do list</title>
-    <!-- <link rel="stylesheet" href="index.css" /> -->
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <header>
-      <h1>Todo-list</h1>
+      <div class="h1">
+        <h1>Todo-list</h1>
+      </div>
       <div class="addedTasks">Tasks: 0</div>
       <section class="inputForTask">
         <input
@@ -17,20 +19,27 @@
           id="task_text"
           placeholder="Please, enter any task here"
         />
-        <button id="add">Add task</button>
+        <button id="add"></button>
+      </section>
+      <section class="errorTask">
+        <p id="error"></p>
       </section>
     </header>
     <main>
       <section id="left">
+        <div class="descList">
+          <img src="./../img/left.svg" alt="" />
+          <p class="left_list">To-Do</p>
+        </div>
         <ul id="tasks"></ul>
       </section>
       <section id="right">
+        <div class="descList">
+          <img src="./../img/right.svg" alt="" />
+          <p class="left_list">Done</p>
+        </div>
         <ul id="mainTasks"></ul>
       </section>
-
-      <!-- <div class="emptyList">
-        <img src="./../img/database.svg" alt="" />
-      </div> -->
     </main>
     <footer></footer>
     <section id="loading">

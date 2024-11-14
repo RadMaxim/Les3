@@ -3,65 +3,69 @@
   --list-color: #d5ccff;
   --item-color: #f4f2ff;
 }
+* {
+  margin: 0;
+  height: 0;
+  box-sizing: border-box;
+}
 @mixin posElem() {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-// @font-face {
-//   font-family: DMSans;
-//   src: url("./DMSans-Italic-VariableFont_opsz\,wght.ttf");
-// }
-h1 {
-  color: var(--item-color);
-  // font-family:DMSans;
+body {
+  background: var(--back-color);
 }
-
-ul {
-  list-style-type: none;
-  min-height: 500px; //
-
-  border-radius: 50px;
-  padding: 10px;
-  background-color: var(--list-color);
-
-  li {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--item-color);
-    margin-top: 30px;
-    min-height: 130px;
+header {
+  height: 30vh;
+  @include posElem();
+  flex-direction: column;
+}
+main {
+  @include posElem();
+  justify-content: space-around;
+  gap: 20px;
+  height: 70vh;
+  section {
+    width: 40%;
+    ul {
+      width: 100%;
+      min-height: 500px;
+      list-style-type: none;
+      min-height: 500px;
+      border-radius: 50px;
+      padding: 10px;
+      li {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: var(--item-color);
+        margin-top: 30px;
+        min-height: 130px;
+      }
+    }
   }
 }
-.task {
-  position: relative;
-  overflow: hidden;
-}
-.task::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -110%;
-  height: 0.1px;
+
+.h1 {
+  height: 30%;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
   width: 100%;
-  border: 1px solid black;
-  transition: left 0.5s ease-in-out;
+  h1 {
+    color: var(--item-color);
+    height: 30px;
+    line-height: 100%;
+  }
 }
+
 input[type="checkbox"]:checked ~ .task::before {
   left: 0%;
 }
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-body {
-  background: var(--back-color);
-  position: relative;
-}
+
 button {
   padding: 5px;
   position: relative;
@@ -69,26 +73,28 @@ button {
   outline: none;
   border: none;
   cursor: pointer;
+  &::before {
+    z-index: 1;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 8, 255, 0.402);
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transition: 0.1s left ease-in-out;
+  }
+  &:hover::before {
+    left: 0%;
+  }
 }
-button::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 8, 255, 0.402);
-  position: absolute;
-  top: 0;
-  left: 100%;
-  transition: 0.1s left ease-in-out;
-}
-button:hover::before {
-  left: 0%;
-}
+
 .addedTasks {
   position: absolute;
-  background-color: rgb(0, 13, 255);
+  background-color: var(--list-color);
   top: 5%;
   right: 5%;
-  color: white;
+  color: var(--back-color);
   width: 100px;
   height: 50px;
   border-radius: 10px;
@@ -122,34 +128,48 @@ button:hover::before {
 #tasks:not(li) ~ .emptyList {
   display: block;
 }
-main {
-  @include posElem();
-  justify-content: space-around;
-  gap: 20px;
-  section {
-    width: 40%;
-    ul {
-      width: 100%;
-      min-height: 500px;
-    }
-  }
-}
+
 .inputForTask {
   @include posElem();
-  width: 80%;
+  width: 70%;
   gap: 20px;
+
+  height: 70%;
 }
 input[id="task_text"] {
   width: 100%;
   height: 40px;
   border-radius: 10px;
   outline: none;
-  border: 0px solid black;
+  border: none;
   text-indent: 20px;
 }
-.add {
+#add {
   height: 40px;
   padding: 10px;
-  width: 100px;
+  width: 150px;
+
   border-radius: 10px !important;
+}
+#add::after {
+  position: absolute;
+  content: "Add task";
+  line-height: 40px;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#add:hover {
+  z-index: 2;
+  color: white;
+}
+.descList {
+  @include posElem();
+}
+#right,
+#left {
+  min-height: 500px;
+  background-color: var(--list-color);
 }

@@ -1,7 +1,6 @@
 // import "./index.css";
 import { waited } from "./loading.js";
-import { drawElem } from "./drawTasks.js";
-import { updateArr, arr, updateLenghtArr } from "./data.js";
+import { updateArr, arr } from "./data.js";
 import { checkTask } from "./checkTask.js";
 
 window.addEventListener("load", () => {
@@ -22,6 +21,5 @@ window.addEventListener("load", () => {
     }
     arr.push(data);
     updateArr(arr);
-    updateLenghtArr();
   });
 });

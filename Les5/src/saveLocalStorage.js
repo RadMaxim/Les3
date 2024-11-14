@@ -4,15 +4,12 @@ const saveTask = () => {
   };
 
   const getTask = () => {
-    const tasks = JSON.parse(
-      localStorage.getItem("arrTask") == "undefined"
-        ? "[{\"text\":\"text\"}]"
-        : localStorage.getItem("arrTask"),
-    );
-    return tasks;
+    if (localStorage.getItem("arrTask") == undefined) {
+      return [];
+    }
+    return JSON.parse(localStorage.getItem("arrTask"));
   };
 
-  // Инициализация localStorage при первом запуске
   if (!localStorage.getItem("arrTask")) {
     setTask([]);
   }

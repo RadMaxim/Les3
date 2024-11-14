@@ -1,4 +1,4 @@
-import { arr } from "./data.js";
+import { arr, updateLenghtArr } from "./data.js";
 import { drawElem } from "./drawTasks.js";
 import saveTask from "./saveLocalStorage.js";
 
@@ -7,7 +7,7 @@ function waited() {
   const { getTask } = saveTask();
 
   drawElem(getTask());
-
+  updateLenghtArr();
   loading.style.display = "none";
 }
 export { waited };

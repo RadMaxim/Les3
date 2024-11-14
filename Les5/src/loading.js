@@ -4,7 +4,7 @@ import saveTask from "./saveLocalStorage.js";
 
 function waited() {
   let loading = document.getElementById("loading");
-  const { getTask } = saveTask();
+  const { getTask } = saveTask("arrTask");
 
   drawElem(getTask());
   updateLenghtArr();

@@ -1,16 +1,16 @@
-const saveTask = () => {
+const saveTask = (nameKept) => {
   const setTask = (arrTask) => {
-    localStorage.setItem("arrTask", JSON.stringify(arrTask));
+    localStorage.setItem(nameKept, JSON.stringify(arrTask));
   };
 
   const getTask = () => {
-    if (localStorage.getItem("arrTask") == undefined) {
+    if (localStorage.getItem(nameKept) == undefined) {
       return [];
     }
-    return JSON.parse(localStorage.getItem("arrTask"));
+    return JSON.parse(localStorage.getItem(nameKept));
   };
 
-  if (!localStorage.getItem("arrTask")) {
+  if (!localStorage.getItem(nameKept)) {
     setTask([]);
   }
 

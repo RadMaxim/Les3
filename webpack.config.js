@@ -6,8 +6,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // Добавл
 
 module.exports = (env) => {
   return {
-    devtool: false,
-    // devtool: 'source-map',
+    // devtool: false,
+    devtool: "source-map",
     mode: env.mode ?? "production",
     entry: {
       filename: path.resolve(__dirname, "./les5/src/index.js"),

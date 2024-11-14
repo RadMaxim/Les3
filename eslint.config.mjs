@@ -10,7 +10,7 @@ export default [
   pluginJs.configs.recommended,
 
   {
-    files: ["src/**/*.js"],
+    files: ["Les5/src/**/*.js"],
     rules: {
       "no-console": "warn",
       "no-unused-vars": "warn",

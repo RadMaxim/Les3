@@ -1,31 +1,38 @@
+:root {
+  --back-color: #2b1887;
+  --list-color: #d5ccff;
+  --item-color: #f4f2ff;
+}
 @mixin posElem() {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@font-face {
-  font-family: myStyle;
-  src: url("./../fonts/PlaywriteGBS-Italic-VariableFont_wght.ttf");
+// @font-face {
+//   font-family: DMSans;
+//   src: url("./DMSans-Italic-VariableFont_opsz\,wght.ttf");
+// }
+h1 {
+  color: var(--item-color);
+  // font-family:DMSans;
 }
-h1,
-h2,
-p {
-  font-family: myStyle;
-}
+
 ul {
   list-style-type: none;
   min-height: 500px; //
-  border: 1px solid black;
+
   border-radius: 50px;
   padding: 10px;
+  background-color: var(--list-color);
 
   li {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(31, 1, 139);
+    background-color: var(--item-color);
     margin-top: 30px;
+    min-height: 130px;
   }
 }
 .task {
@@ -52,11 +59,11 @@ header {
   flex-direction: column;
 }
 body {
-  background: linear-gradient(90deg, rgb(97, 97, 255), rgb(38, 38, 255));
+  background: var(--back-color);
   position: relative;
 }
 button {
-  padding: 15px;
+  padding: 5px;
   position: relative;
   overflow: hidden;
   outline: none;
@@ -94,10 +101,10 @@ button:hover::before {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(55, 0, 255, 0.924);
+  background-color: var(--back-color);
   width: 100vw;
   height: 100vh;
-  color: white;
+  color: var(--item-color);
   font-weight: 700;
 }
 .emptyList {
@@ -117,13 +124,32 @@ button:hover::before {
 }
 main {
   @include posElem();
+  justify-content: space-around;
+  gap: 20px;
+  section {
+    width: 40%;
+    ul {
+      width: 100%;
+      min-height: 500px;
+    }
+  }
+}
+.inputForTask {
+  @include posElem();
+  width: 80%;
   gap: 20px;
 }
-#tasks {
-  width: 40%;
-  min-height: 500px;
+input[id="task_text"] {
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  border: 0px solid black;
+  text-indent: 20px;
 }
-#mainTasks {
-  width: 40%;
-  min-height: 500px;
+.add {
+  height: 40px;
+  padding: 10px;
+  width: 100px;
+  border-radius: 10px !important;
 }

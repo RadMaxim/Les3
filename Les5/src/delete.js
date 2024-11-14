@@ -18,21 +18,27 @@ function deleteElem() {
 
   for (let elem of lists) {
     elem.addEventListener("dragstart", function (e) {
-      let selected = e.target;
+      let selected = e.currentTarget;
+      console.log(e.innerHTML + ":eee");
+      console.log(selected + ":ppp");
+      console.log(e.srcElement);
 
       right.addEventListener("dragover", function (e) {
         e.preventDefault();
+        console.log("right dragover");
       });
       right.addEventListener("drop", function () {
         right.appendChild(selected);
-        selected = null;
       });
       left.addEventListener("dragover", function (e) {
+        console.log("left dragover");
         e.preventDefault();
       });
       left.addEventListener("drop", function () {
+        console.log("left drop");
+
         left.appendChild(selected);
-        selected = null;
+        // selected = null;
       });
     });
   }

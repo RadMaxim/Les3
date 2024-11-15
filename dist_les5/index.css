@@ -12,33 +12,56 @@
 
 body {
   background: var(--back-color);
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 30vh 70vh;
+  grid-template-areas: "header" "main";
 }
 
 header {
-  height: 30vh;
+  grid-area: header;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+header .h1 {
+  height: 30%;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  width: 100%;
+}
+header .h1 h1 {
+  color: var(--item-color);
+  height: 30px;
+  line-height: 100%;
+}
 
 main {
+  grid-area: main;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-around;
   gap: 20px;
-  height: 70vh;
 }
 main section {
   width: 40%;
+  overflow: hidden;
+  border-radius: 50px;
+  min-height: 500px;
 }
 main section ul {
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  min-height: 500px;
   width: 100%;
-  min-height: 500px;
   list-style-type: none;
-  min-height: 500px;
-  border-radius: 50px;
   padding: 10px;
 }
 main section ul li {
@@ -48,21 +71,17 @@ main section ul li {
   background-color: var(--item-color);
   margin-top: 30px;
   min-height: 130px;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
 }
-
-.h1 {
-  height: 30%;
-  display: flex;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
-  width: 100%;
+main section ul::-webkit-scrollbar {
+  width: 10px;
 }
-.h1 h1 {
-  color: var(--item-color);
-  height: 30px;
-  line-height: 100%;
+main section ul::-webkit-scrollbar-track {
+  background-color: var(--item-color);
+}
+main section ul::-webkit-scrollbar-thumb {
+  background-color: var(--back-color);
 }
 
 input[type="checkbox"]:checked ~ .task::before {
@@ -190,6 +209,15 @@ input[id="task_text"] {
 #left {
   min-height: 500px;
   background-color: var(--list-color);
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+  }
+  main section {
+    width: 80%;
+  }
 } /*# sourceMappingURL=index.css.map */
 
 /*# sourceMappingURL=index.css.map*/

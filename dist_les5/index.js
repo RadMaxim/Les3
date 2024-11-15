@@ -1,78 +1,79 @@
 (() => {
   "use strict";
-  const e = () => {
-    const e = (e) => {
-      localStorage.setItem("arrTask", JSON.stringify(e));
-    };
-    return (
-      localStorage.getItem("arrTask") || e([]),
-      {
-        getTask: () =>
-          JSON.parse(
-            "undefined" == localStorage.getItem("arrTask")
-              ? '[{"text":"text"}]'
-              : localStorage.getItem("arrTask"),
-          ),
-        setTask: e,
-      }
-    );
-  };
-  let t = [];
-  function n(n) {
-    const { getTask: l, setTask: o } = e();
-    (t = n), o(n), s(l());
-  }
-  function l() {
-    document.querySelector(".addedTasks").textContent = `Tasks: ${t.length}`;
-  }
-  function o() {
+  const e = (e) => {
+      const t = (t) => {
+        localStorage.setItem(e, JSON.stringify(t));
+      };
+      return (
+        localStorage.getItem(e) || t([]),
+        {
+          getTask: () =>
+            null == localStorage.getItem(e)
+              ? []
+              : JSON.parse(localStorage.getItem(e)),
+          setTask: t,
+        }
+      );
+    },
+    { getTaskRight: t, setTaskRight: n } = e("arrTaskRight"),
+    l = [];
+  function s() {
     let e = document.getElementsByClassName("btnDelete");
-    Array.from(e).forEach((e, o) => {
+    Array.from(e).forEach((e, t) => {
       e.addEventListener("click", () => {
-        t.splice(o, 1), n(t), l(), s(t);
+        c.splice(t, 1), i(c), o(c);
       });
     });
-    let o = document.getElementById("tasks"),
-      a = document.getElementById("mainTasks"),
-      r = document.getElementsByClassName("task_li");
-    for (let e of r)
+    let t = document.getElementById("tasks"),
+      s = document.getElementById("mainTasks"),
+      a = document.getElementsByClassName("task_li");
+    for (let e of a)
       e.addEventListener("dragstart", function (e) {
-        let t = e.currentTarget;
-        console.log(e.innerHTML + ":eee"),
-          console.log(t + ":ppp"),
-          console.log(e.srcElement),
-          a.addEventListener("dragover", function (e) {
+        let o = e.currentTarget,
+          a = o.innerText.split("\n\n"),
+          r = { num: a[0], text: a[1] };
+        l.push(r),
+          console.log(l),
+          s.addEventListener("dragover", function (e) {
             e.preventDefault(), console.log("right dragover");
           }),
-          a.addEventListener("drop", function () {
-            a.appendChild(t);
+          s.addEventListener("drop", function () {
+            n(r), s.appendChild(o);
           }),
-          o.addEventListener("dragover", function (e) {
+          t.addEventListener("dragover", function (e) {
             console.log("left dragover"), e.preventDefault();
           }),
-          o.addEventListener("drop", function () {
-            console.log("left drop"), o.appendChild(t);
+          t.addEventListener("drop", function () {
+            console.log("left drop"), t.appendChild(o);
           });
       });
   }
-  function s(e) {
+  function o(e) {
     let t = document.getElementById("tasks"),
       n = "";
     for (let t = 0; t < e.length; t++)
       n += `<li draggable="true" class="task_li">\n                <p class="numberTask">${t + 1}</p>\n                <input type="checkbox" name="" id="">\n                <p class="task">${e[t].text}</p>\n                \n                <button class="btnDelete">Delete</button>\n            </li>`;
-    (t.innerHTML = n), o();
+    (t.innerHTML = n), s();
+  }
+  const { getTask: a, setTask: r } = e("arrTask");
+  let c = a();
+  function i(e) {
+    r(e), o(e), d();
+  }
+  function d() {
+    document.querySelector(".addedTasks").textContent = `Tasks: ${c.length}`;
   }
   window.addEventListener("load", () => {
     !(function () {
       let t = document.getElementById("loading");
-      const { getTask: n } = e();
-      s(n()), (t.style.display = "none");
+      const { getTask: n } = e("arrTask");
+      o(n()), d(), (t.style.display = "none");
     })();
-    let o = document.getElementById("add"),
-      a = document.getElementById("error");
-    o.addEventListener("click", () => {
+    let t = document.getElementById("add"),
+      n = document.getElementById("error");
+    t.addEventListener("click", () => {
       let e = { text: document.getElementById("task_text").value },
-        o = ((e) => {
+        t = ((e) => {
           let t = String(e);
           return (
             console.log(t),
@@ -90,8 +91,7 @@
                   : ""
           );
         })(e.text).trim();
-      (a.innerText = ""),
-        0 == o.length ? (t.push(e), n(t), l()) : (a.innerText = o);
+      (n.innerText = ""), 0 == t.length ? (c.push(e), i(c)) : (n.innerText = t);
     });
   });
 })();

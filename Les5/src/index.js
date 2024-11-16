@@ -1,8 +1,10 @@
 // import "./index.css";
 import { waited } from "./loading.js";
-import { updateArr, arr } from "./data.js";
+import { updateLeftArr } from "./data.js";
 import { checkTask } from "./checkTask.js";
-
+import { deleteElem } from "./delete.js";
+import saveTask from "./saveLocalStorage.js";
+let { setTask, getTask } = saveTask("leftSection");
 window.addEventListener("load", () => {
   waited();
 
@@ -19,7 +21,10 @@ window.addEventListener("load", () => {
       error.innerText = errorText;
       return;
     }
-    arr.push(data);
-    updateArr(arr);
+    let arrLeft = getTask();
+    arrLeft.push(data);
+    setTask(arrLeft);
+    updateLeftArr(arrLeft);
   });
+  deleteElem();
 });

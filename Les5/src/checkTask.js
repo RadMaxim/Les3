@@ -1,6 +1,5 @@
 const checkTask = (task) => {
   let tsk = String(task);
-  console.log(tsk);
 
   if (tsk.length == 0) {
     console.log("This task must not be empty");

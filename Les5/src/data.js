@@ -1,19 +1,25 @@
+import { deleteElem } from "./delete.js";
 import { drawElem } from "./drawTasks.js";
 import saveTask from "./saveLocalStorage.js";
 import saveRightDone from "./saveRightDone.js";
-const { getTask, setTask } = saveTask("arrTask");
-const { getTaskRight } = saveRightDone();
-let arr = getTask();
-const rightArr = getTaskRight();
-function updateArr(arrNew) {
-  setTask(arrNew);
-  drawElem(arrNew);
+const { getTask, setTask } = saveTask("leftSection");
+const { getTaskRight, setTaskRight } = saveRightDone("rightSection");
+
+function updateLeftArr(arrNew) {
   updateLenghtArr();
 }
-
+function updateArrRight(arrNew) {
+  setTaskRight(arrNew);
+  updateLenghtArr();
+}
 function updateLenghtArr() {
+  let arrLeft = getTask();
+  const arrRight = getTaskRight();
+  drawElem(arrLeft, "#tasks");
+  drawElem(arrRight, "#mainTasks");
+  deleteElem();
   let addedTasks = document.querySelector(".addedTasks");
-  addedTasks.textContent = `Tasks: ${arr.length}`;
+  addedTasks.textContent = `Tasks: ${arrLeft.length}`;
 }
 
-export { rightArr, arr, updateArr, updateLenghtArr };
+export { updateLeftArr, updateArrRight, updateLenghtArr };

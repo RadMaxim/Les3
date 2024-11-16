@@ -1,12 +1,10 @@
-import { arr, updateLenghtArr } from "./data.js";
+import { updateLenghtArr } from "./data.js";
 import { drawElem } from "./drawTasks.js";
-import saveTask from "./saveLocalStorage.js";
 
 function waited() {
   let loading = document.getElementById("loading");
-  const { getTask } = saveTask("arrTask");
-
-  drawElem(getTask());
+  // drawElem(arrLeft,"#tasks");
+  // drawElem(arrRight,"#mainTasks");
   updateLenghtArr();
   loading.style.display = "none";
 }

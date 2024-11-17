@@ -52,14 +52,15 @@ main {
 }
 main section {
   width: 40%;
-  overflow: hidden;
+  position: relative;
   border-radius: 50px;
-  min-height: 500px;
+  max-height: 500px;
 }
 main section ul {
+  border-radius: 50px;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
-  min-height: 500px;
+  height: 100%;
   width: 100%;
   list-style-type: none;
   padding: 10px;
@@ -71,6 +72,7 @@ main section ul li {
   background-color: var(--item-color);
   margin-top: 30px;
   min-height: 130px;
+  width: 100%;
   scroll-snap-align: center;
   scroll-snap-stop: always;
 }

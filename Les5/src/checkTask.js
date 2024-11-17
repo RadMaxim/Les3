@@ -16,4 +16,4 @@ const checkTask = (task) => {
 
   return "";
 };
-export { checkTask };
+export default checkTask;

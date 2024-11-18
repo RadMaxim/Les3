@@ -62,7 +62,7 @@ main {
       list-style-type: none;
       padding: 10px;
       display: flex;
-
+      gap: 30px;
       flex-direction: column;
 
       li {
@@ -70,11 +70,20 @@ main {
         justify-content: space-around;
         align-items: center;
         background-color: var(--item-color);
-        margin-top: 30px;
         min-height: 200px;
         width: 100%;
         scroll-snap-align: center;
         scroll-snap-stop: always;
+        p {
+          height: 20px;
+        }
+        input {
+          height: 20px;
+        }
+        button {
+          height: 40px;
+          width: 100px;
+        }
       }
     }
     ul::-webkit-scrollbar {

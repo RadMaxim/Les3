@@ -1,4 +1,4 @@
-import { arrays, ArrayUpdate } from "./data.js";
+import { ArrayUpdate } from "./data.js";
 
 let left = document.getElementById("tasks");
 let right = document.getElementById("mainTasks");
@@ -26,7 +26,7 @@ function handlerMouseMove(e) {
   }
 }
 const handlerMouseUp = (e) => {
-  let infoOfDraggedElement = draggedElement.innerText.split("\n\n")[1];
+  let infoOfDraggedElement = draggedElement?.innerText?.split("\n\n")[1];
 
   if (isDragging) {
     isDragging = false;
@@ -34,13 +34,7 @@ const handlerMouseUp = (e) => {
       e.preventDefault();
       right.appendChild(draggedElement);
       draggedElement.style.position = "static";
-      let newArr = [...arrays.rightArray].push(infoOfDraggedElement);
-      let uniq = new Set([...newArr]);
-      console.log(uniq);
-
-      ArrayUpdate({
-        rightArray: uniq,
-      });
+      ArrayUpdate("", infoOfDraggedElement);
     });
   }
   if (isDragging) {
@@ -49,21 +43,14 @@ const handlerMouseUp = (e) => {
       e.preventDefault();
       left.appendChild(draggedElement);
       draggedElement.style.position = "static";
-      let newArr = [...arrays.leftArray].push(infoOfDraggedElement);
-      let uniq = new Set([...newArr]);
-      console.log(uniq);
-      ArrayUpdate({
-        leftArray: uniq,
-      });
+      ArrayUpdate(infoOfDraggedElement, "");
     });
   }
 };
 function dragAndDropEvent() {
   [...elem].forEach((elem) => {
-    // Делегирование событий на левом списке
     elem.addEventListener("mousedown", handlerMousDown);
   });
-  // Обработчики событий для всего документа
   document.addEventListener("mousemove", handlerMouseMove);
 
   document.addEventListener("mouseup", handlerMouseUp);

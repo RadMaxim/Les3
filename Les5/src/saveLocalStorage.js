@@ -1,5 +1,7 @@
 const saveTask = (nameKept) => {
   const setTask = (arrTask) => {
+    console.log(arrTask);
+
     localStorage.setItem(nameKept, JSON.stringify(arrTask));
   };
 

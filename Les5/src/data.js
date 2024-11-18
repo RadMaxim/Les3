@@ -4,7 +4,16 @@ import saveTask from "./saveLocalStorage.js";
 import saveRightDone from "./saveRightDone.js";
 const { getTask, setTask } = saveTask("leftSection");
 const { getTaskRight, setTaskRight } = saveRightDone("rightSection");
-
+let arrays = {
+  leftArray: [],
+  rightArray: [],
+};
+function ArrayUpdate(arr) {
+  arrays = {
+    ...arr,
+  };
+  console.log(arrays);
+}
 function updateLeftArr(arrNew) {
   updateLenghtArr();
 }
@@ -22,4 +31,4 @@ function updateLenghtArr() {
   addedTasks.textContent = `Tasks: ${arrLeft.length}`;
 }
 
-export { updateLeftArr, updateArrRight, updateLenghtArr };
+export { arrays, ArrayUpdate, updateLeftArr, updateArrRight, updateLenghtArr };

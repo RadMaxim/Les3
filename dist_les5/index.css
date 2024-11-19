@@ -1,0 +1,270 @@
+:root {
+  --back-color: #2b1887;
+  --list-color: #d5ccff;
+  --item-color: #f4f2ff;
+}
+
+* {
+  margin: 0;
+  height: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--back-color);
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 30vh 70vh;
+  grid-template-areas: "header" "main";
+}
+
+header {
+  grid-area: header;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+header .h1 {
+  height: 30%;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  width: 100%;
+}
+header .h1 h1 {
+  color: var(--item-color);
+  height: 30px;
+  line-height: 100%;
+}
+
+main {
+  grid-area: main;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+main section {
+  width: 40%;
+  position: relative;
+  border-radius: 50px;
+  max-height: 500px;
+}
+main section ul {
+  border-radius: 50px;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  height: 90%;
+  width: 100%;
+  list-style-type: none;
+  padding: 10px;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+main section ul li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--item-color);
+  min-height: 200px;
+  width: 100%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+main section ul li p {
+  height: 20px;
+}
+main section ul li input {
+  height: 20px;
+}
+main section ul li button {
+  height: 40px;
+  width: 100px;
+}
+main section ul::-webkit-scrollbar {
+  width: 10px;
+}
+main section ul::-webkit-scrollbar-track {
+  background-color: var(--item-color);
+}
+main section ul::-webkit-scrollbar-thumb {
+  background-color: var(--back-color);
+}
+
+input[type="checkbox"]:checked ~ .task::before {
+  left: 0%;
+}
+
+button {
+  padding: 5px;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+button::before {
+  z-index: 1;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 8, 255, 0.402);
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: 0.1s left ease-in-out;
+}
+button:hover::before {
+  left: 0%;
+}
+
+.addedTasks {
+  position: absolute;
+  background-color: var(--list-color);
+  top: 5%;
+  right: 5%;
+  color: var(--back-color);
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 50px;
+  font-weight: 700;
+}
+
+#loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--back-color);
+  width: 100vw;
+  height: 100vh;
+  color: var(--item-color);
+  font-weight: 700;
+}
+
+.emptyList {
+  display: none;
+}
+
+.emptyList {
+  position: absolute;
+  top: 40vh;
+  left: 25%;
+  transform: translateX(-50%);
+}
+
+#tasks:has(li) ~ .emptyList {
+  display: none !important;
+}
+
+#tasks:not(li) ~ .emptyList {
+  display: block;
+}
+
+.inputForTask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  gap: 20px;
+  height: 70%;
+}
+
+input[id="task_text"] {
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  text-indent: 20px;
+}
+
+#add {
+  height: 40px;
+  padding: 10px;
+  width: 150px;
+  border-radius: 10px !important;
+}
+
+#add::after {
+  position: absolute;
+  content: "Add task";
+  line-height: 40px;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#add:hover {
+  z-index: 2;
+  color: white;
+}
+
+.descList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#right,
+#left {
+  min-height: 500px;
+  background-color: var(--list-color);
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+  }
+  main section {
+    width: 80%;
+  }
+}
+.choice_section {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.choice_section input[type="checkbox"] {
+  display: none;
+}
+.choice_section label[id="l1"] {
+  display: block;
+}
+.choice_section label[id="l2"] {
+  display: none;
+}
+.choice_section input[type="checkbox"]:checked ~ label[id="l1"] {
+  display: none !important;
+}
+.choice_section input[type="checkbox"]:checked ~ label[id="l2"] {
+  display: block;
+}
+.choice_section label {
+  height: 20px;
+  width: 20px;
+}
+.choice_section label svg {
+  width: 100%;
+  height: 100%;
+  transform: scale(1.2);
+}
+.choice_section label svg:hover {
+  fill: rgb(64, 0, 255);
+} /*# sourceMappingURL=index.css.map */
+
+/*# sourceMappingURL=index.css.map*/

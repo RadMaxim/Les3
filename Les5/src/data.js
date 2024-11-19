@@ -3,13 +3,21 @@ import dragAndDropEvent from "./dragAndDrop.js";
 import { drawElem } from "./drawTasks.js";
 import saveTask from "./saveLocalStorage.js";
 import saveRightDone from "./saveRightDone.js";
+import saveStore from "./saveStore.js";
 const { getTask, setTask } = saveTask("leftSection");
 const { getTaskRight, setTaskRight } = saveRightDone("rightSection");
+let { getTaskStore, setTaskStore } = saveStore("choice");
+
 let arrays = {
   setRight: new Set([...getTaskRight()]),
   setLeft: new Set([...getTask()]),
 };
-
+let saveArr = getTaskStore();
+let map = new Map([...saveArr]);
+function updateStore(text, state) {
+  map.set(text, state);
+  setTaskStore([...map]);
+}
 function ArrayUpdate(left, right) {
   if (left != "") {
     arrays.setLeft.add(left);
@@ -35,4 +43,4 @@ function updateLenghtArr() {
   addedTasks.textContent = `All tasks: ${arrays.setLeft.size + arrays.setRight.size}`;
 }
 
-export { arrays, ArrayUpdate, updateLenghtArr };
+export { map, arrays, ArrayUpdate, updateLenghtArr };

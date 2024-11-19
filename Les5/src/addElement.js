@@ -15,7 +15,10 @@ function addElem() {
       error.innerText = errorText;
       return;
     }
-
+    let obj = {
+      text: task_text,
+      state: 1,
+    };
     ArrayUpdate(task_text, "");
     deleteElem();
   });

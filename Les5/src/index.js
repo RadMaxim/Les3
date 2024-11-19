@@ -1,4 +1,4 @@
-import "./index.css";
+// import "./index.css";
 import { waited } from "./loading.js";
 import { deleteElem } from "./delete.js";
 import addElem from "./addElement.js";

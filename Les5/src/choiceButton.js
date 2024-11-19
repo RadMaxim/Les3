@@ -11,6 +11,7 @@ function checkBox() {
   [...list_li].forEach((elem) => {
     elem.addEventListener("change", () => {
       let parent = elem.parentNode.parentNode;
+      console.log(elem);
 
       if (elem.checked) {
         map.set(parent.innerText.split("\n\n")[1], 2);

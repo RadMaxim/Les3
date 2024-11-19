@@ -223,16 +223,16 @@ input[id="task_text"] {
   input[type="checkbox"] {
     display: none;
   }
-  label[id="l1"] {
+  label[id="l2"] {
     display: block;
   }
-  label[id="l2"] {
+  label[id="l1"] {
     display: none;
   }
-  input[type="checkbox"]:checked ~ label[id="l1"] {
+  input[type="checkbox"]:checked ~ label[id="l2"] {
     display: none !important;
   }
-  input[type="checkbox"]:checked ~ label[id="l2"] {
+  input[type="checkbox"]:checked ~ label[id="l1"] {
     display: block;
   }
   label {

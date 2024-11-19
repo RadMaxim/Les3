@@ -242,16 +242,16 @@ input[id="task_text"] {
 .choice_section input[type="checkbox"] {
   display: none;
 }
-.choice_section label[id="l1"] {
+.choice_section label[id="l2"] {
   display: block;
 }
-.choice_section label[id="l2"] {
+.choice_section label[id="l1"] {
   display: none;
 }
-.choice_section input[type="checkbox"]:checked ~ label[id="l1"] {
+.choice_section input[type="checkbox"]:checked ~ label[id="l2"] {
   display: none !important;
 }
-.choice_section input[type="checkbox"]:checked ~ label[id="l2"] {
+.choice_section input[type="checkbox"]:checked ~ label[id="l1"] {
   display: block;
 }
 .choice_section label {

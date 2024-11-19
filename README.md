@@ -48,8 +48,8 @@ Cодержит все зависимости проектаи.
 
 это файл конфигурации для ESLint.
 
-![to-do list](./Les5/img/image.png)
+![to-do list](./Les5/gitImg/image.png)
 
-### [Деплой приложения](https://curious-truffle-836082.netlify.app/)
+### [Деплой приложения](https://courageous-hotteok-c62586.netlify.app/)
 
 #### В приложение нуждается в дороботке, нужно отладить перетаскивание элементов и исправить сохраниение в localStorage

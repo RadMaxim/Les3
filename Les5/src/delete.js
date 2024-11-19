@@ -8,7 +8,7 @@ function deleteElem() {
   const { setTaskRight } = saveRightDone("rightSection");
   Array.from(btnDelete).forEach((elem, index) => {
     elem.addEventListener("click", () => {
-      let info = elemOfList[index];
+      let info = elemOfList[index]?.parentNode?.id;
       elemOfList[index].remove();
 
       let allLeftElem = Array.from(document.querySelectorAll(".task_li")).map(
@@ -18,9 +18,11 @@ function deleteElem() {
           };
         },
       );
-      if (info.parentElement?.classList[0] == "tasks") {
+
+      if (info == "tasks") {
         setTask(allLeftElem);
-      } else {
+      }
+      if (info == "mainTasks") {
         setTaskRight(allLeftElem);
       }
     });

@@ -24,7 +24,7 @@ function chiceID(state, arr) {
     }
     li += `<li draggable="true" class="task_li">
                 <p class="numberTask">${index + 1}</p>
-                <input type="checkbox" name="" id="">
+                <input type="checkbox" name="" class="cross" id="">
                 <p class="task">${arr[index]}</p>
                 <button class="btnDelete">Delete</button>
                 <div class="choice_section">
